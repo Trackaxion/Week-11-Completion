@@ -49,6 +49,18 @@ public class Player : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y * -1, 0);
         }
+        
+        //Player can't move above the halfway point of the screen. by Isaiah Lopez
+        if (transform.position.y >= 0f)
+        {
+            transform.position = new Vector3(transform.position.x * 1, transform.position.y * 0);
+        }
+
+        //Player can't move below the screen. by Isaiah Lopez
+        if (transform.position.y <= -4)
+        {
+            transform.position = new Vector3(transform.position.x * 1, -4);
+        }
     }
 
     void Shooting()
